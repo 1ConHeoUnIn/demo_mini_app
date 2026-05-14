@@ -1,0 +1,147 @@
+/* ─── FarmTab.css ────────────────────────────────────────────────────────────
+   CSS riêng cho Tab Nông trại + StockCard + HistoryRow components
+   Import tại: src/pages/tabs/FarmTab.jsx
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   1. Quick Action buttons
+   ══════════════════════════════════════════════════════════════════════════════ */
+.farm-quick-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.farm-action-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 134, 139, 0.07);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.farm-action-btn:active { background: #f0fafa; }
+
+.farm-action-btn__icon  { font-size: 26px; }
+
+.farm-action-btn__label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   2. StockCard component – scroll ngang tồn kho
+   ══════════════════════════════════════════════════════════════════════════════ */
+.stock-scroll-wrap {
+  overflow-x: auto;
+  display: flex;
+  gap: 12px;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.stock-scroll-wrap::-webkit-scrollbar { display: none; }
+
+.stock-card {
+  min-width: 150px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 2px 8px rgba(0, 134, 139, 0.07);
+  flex-shrink: 0;
+}
+
+.stock-card__icon { font-size: 22px; margin-bottom: 6px; }
+
+.stock-card__name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2px;
+}
+
+.stock-card__qty {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+.stock-card__qty span {
+  font-weight: 700;
+  color: var(--color-primary-lt);
+}
+
+.stock-mini-bar-wrap {
+  width: 100%;
+  height: 6px;
+  background: #d8eeee;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.stock-mini-bar {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-lt));
+}
+.stock-mini-bar--low {
+  background: linear-gradient(90deg, #e65100, #ffa726);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   3. HistoryRow component – lịch sử nhận hàng
+   ══════════════════════════════════════════════════════════════════════════════ */
+.history-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #edf6f6;
+}
+.history-item:last-child { border-bottom: none; }
+
+.history-item__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+.history-item__dot--delivered { background: var(--color-primary-lt); }
+.history-item__dot--shipping  { background: #1565c0;                 }
+.history-item__dot--pending   { background: #e65100;                 }
+
+.history-item__info { flex: 1; }
+
+.history-item__date {
+  font-size: 11px;
+  color: var(--color-text-faint);
+  margin-bottom: 2px;
+}
+
+.history-item__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.history-item__badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  align-self: center;
+}
+.history-item__badge--delivered { background: #e0f9f9; color: var(--color-primary-lt); }
+.history-item__badge--shipping  { background: #e3f2fd; color: #1565c0;                 }
+.history-item__badge--pending   { background: #fff3e0; color: #e65100;                 }

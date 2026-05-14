@@ -1,0 +1,162 @@
+/* ─── ProfileTab.css ─────────────────────────────────────────────────────────
+   CSS riêng cho Tab Cá nhân
+   Import tại: src/pages/tabs/ProfileTab.jsx
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   1. Profile layout wrapper
+   ══════════════════════════════════════════════════════════════════════════════ */
+.profile-tab {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   2. Hero Avatar
+   ══════════════════════════════════════════════════════════════════════════════ */
+.profile-hero {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary)    0%,
+    var(--color-primary-lt) 100%
+  );
+  padding: 32px 20px 28px;
+  border-radius: 0 0 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: 3px solid rgba(255, 255, 255, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.profile-hero__name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+.profile-hero__rank {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: rgba(255, 159, 28, 0.15);
+  padding: 3px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 159, 28, 0.35);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   3. Wallet cards – MyPoint & Voucher
+   ══════════════════════════════════════════════════════════════════════════════ */
+.profile-wallet-row {
+  display: flex;
+  gap: 10px;
+  padding: 16px 16px 0;
+}
+
+.wallet-card {
+  flex: 1;
+  border-radius: 14px;
+  padding: 14px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(0, 134, 139, 0.10);
+  cursor: pointer;
+}
+
+.wallet-card--point {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary)    0%,
+    var(--color-primary-lt) 100%
+  );
+}
+
+.wallet-card--voucher {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #ffcc55 100%);
+}
+
+.wallet-card__icon  { font-size: 22px; }
+
+.wallet-card__value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.wallet-card__label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 500;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   4. Profile menu – flat list style
+   ══════════════════════════════════════════════════════════════════════════════ */
+.profile-menu-wrap {
+  margin: 16px 16px 0;
+  background: var(--color-card);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 134, 139, 0.07);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.profile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #edf6f6;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.profile-menu-item:last-child { border-bottom: none; }
+.profile-menu-item:active     { background: #f0fafa; }
+
+.profile-menu__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #e0f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.profile-menu__label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.profile-menu__chevron {
+  color: #b0c8c8;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   5. Logout button wrapper
+   ══════════════════════════════════════════════════════════════════════════════ */
+.profile-logout-wrap {
+  margin: 16px 16px 8px;
+}

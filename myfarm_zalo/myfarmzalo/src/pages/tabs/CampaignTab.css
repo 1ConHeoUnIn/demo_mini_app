@@ -1,0 +1,124 @@
+/* ─── CampaignTab.css ────────────────────────────────────────────────────────
+   CSS riêng cho Tab Chiến dịch + CampaignCard component
+   Import tại: src/pages/tabs/CampaignTab.jsx
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   1. Campaign Header gradient
+   ══════════════════════════════════════════════════════════════════════════════ */
+.campaign-header {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary)    0%,
+    var(--color-primary-lt) 100%
+  );
+  padding: 16px;
+  margin: -16px -16px 16px -16px;
+  border-radius: 0 0 16px 16px;
+}
+
+.campaign-header__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.campaign-header__subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   2. Search Bar
+   ══════════════════════════════════════════════════════════════════════════════ */
+.search-bar-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 8px 12px;
+  gap: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 134, 139, 0.06);
+}
+
+.search-bar-icon {
+  font-size: 16px;
+  color: var(--color-text-faint);
+  flex-shrink: 0;
+}
+
+.search-bar-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: transparent;
+}
+
+.search-bar-input::placeholder {
+  color: var(--color-text-faint);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   3. Category Chips
+   ══════════════════════════════════════════════════════════════════════════════ */
+.chip-scroll-wrap {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 14px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.chip-scroll-wrap::-webkit-scrollbar { display: none; }
+
+.chip {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.chip--active {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   4. CampaignCard component
+   ══════════════════════════════════════════════════════════════════════════════ */
+.campaign-card {
+  background: var(--color-card);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 134, 139, 0.08);
+  border: 1px solid var(--color-border);
+}
+
+.campaign-card__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.campaign-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
